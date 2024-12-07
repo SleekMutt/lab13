@@ -1,5 +1,6 @@
 package org.example.laba13.resource;
 
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -7,6 +8,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/secure")
+@DeclareRoles({"admin", "user"})
 @Produces(MediaType.TEXT_PLAIN)
 public class PostResource {
   @GET
